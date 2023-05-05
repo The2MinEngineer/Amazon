@@ -1,10 +1,6 @@
 import Image from 'next/image';
 import { StarIcon } from '@heroicons/react/solid';
-import dynamic from 'next/dynamic';
-
-const Currency = dynamic(() => import('react-currency-formatter'), {
-  ssr: false,
-});
+import Currency from 'react-currency-formatter';
 
 const Product = ({
   id,
@@ -36,7 +32,7 @@ const Product = ({
     <p className="text-xs my-2 line-clamp-2">{description}</p>
 
     <div className="mb-5">
-      <Currency quantity={price} currency="USD" />
+      <Currency quantity={price} currency="NGN" />
     </div>
 
     {hasPrime === true && ( // check for strict equality
